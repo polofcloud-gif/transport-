@@ -1,0 +1,16 @@
+{
+  "name": "shivshakti-invoice-maker",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "ShivShakti Transport Company — Professional Transport Invoice & Bill Generator",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "node -e \"const fs=require('fs'); ['dist','.vite'].forEach(d => { if(fs.existsSync(d)) fs.rmSync(d, {recursive:true,force:true}); }); console.log('Clean complete.');\""
+  },
+  "devDependencies": {
+    "vite": "^8.1.5"
+  }
+}

@@ -1,0 +1,87 @@
+/* ============================================================
+   print.css — Print-only Styles
+   Hides UI chrome; shows only the invoice at A4 size.
+   ============================================================ */
+
+@media print {
+  /* Hide everything except the invoice */
+  body * {
+    visibility: hidden;
+  }
+
+  .invoice-page,
+  .invoice-page * {
+    visibility: visible;
+  }
+
+  /* Position invoice at top-left of page */
+  .invoice-page {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* A4 page setup */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  /* Hide sidebar, navigation, buttons, forms */
+  .sidebar,
+  .sidebar-toggle,
+  .sidebar-overlay,
+  .main-content > .page-header,
+  .preview-actions,
+  .btn-group,
+  .toast-container,
+  .modal-overlay,
+  .confirm-overlay {
+    display: none !important;
+  }
+
+  /* Reset main content margin */
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Prevent page breaks inside invoice sections */
+  .inv-header,
+  .inv-parties,
+  .inv-truck,
+  .inv-totals,
+  .inv-words,
+  .inv-rules,
+  .inv-signatures {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Allow items table to break if very long */
+  .inv-items {
+    page-break-inside: auto;
+  }
+
+  /* Ensure logo prints correctly */
+  .inv-logo {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Ensure header background prints */
+  .inv-header,
+  .inv-truck-label,
+  .inv-rules-label,
+  .inv-items thead th,
+  .inv-totals-row.inv-grand-total {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

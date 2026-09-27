@@ -1,0 +1,687 @@
+/* ============================================================
+   invoice.css — A4 Invoice Preview & PDF Styles
+   Transport Invoice Generator for SHIVSHAKTI TRANSPORT COMPANY
+   ============================================================ */
+
+/* ── A4 Container ─────────────────────────────────────────── */
+.invoice-page {
+  width: 210mm;
+  height: 296mm;
+  min-height: 296mm;
+  max-height: 296mm;
+
+  background: #ffffff;
+  margin: 0 auto;
+
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 10pt;
+  color: #1e293b;
+
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+/* ── Header Band ──────────────────────────────────────────── */
+.inv-header {
+  background: #1a3a5c;
+  color: #ffffff;
+  padding: 18px 28px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.inv-header-left {
+  flex: 1;
+}
+
+/* Logo + Company Info side-by-side */
+.inv-header-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inv-logo {
+  width: 78px;
+  height: 60px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.inv-header-info {
+  flex: 1;
+}
+
+.inv-company-name {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 15pt;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.inv-company-address {
+  font-size: 8pt;
+  opacity: 0.85;
+  line-height: 1.5;
+  margin-bottom: 2px;
+}
+
+.inv-company-contact {
+  font-size: 8pt;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.inv-header-right {
+  text-align: right;
+  flex-shrink: 0;
+  padding-left: 20px;
+}
+
+.inv-title {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 26pt;
+  font-weight: 700;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.inv-meta {
+  font-size: 9pt;
+  line-height: 1.8;
+}
+
+.inv-meta strong {
+  font-weight: 600;
+}
+
+/* ── Content Area ─────────────────────────────────────────── */
+.inv-body {
+  padding: 12px 28px 18px;
+}
+
+/* ── Bill From / Bill To ──────────────────────────────────── */
+.inv-parties {
+  display: flex;
+  gap: 0;
+  margin-bottom: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inv-party {
+  flex: 1;
+  padding: 12px 16px;
+}
+
+.inv-party:first-child {
+  border-right: 1.5px solid #cbd5e1;
+}
+
+.inv-party-label {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #1a3a5c;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inv-party-name {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.inv-party-detail {
+  font-size: 8.5pt;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* ── Truck Details ────────────────────────────────────────── */
+.inv-truck {
+  margin-bottom: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inv-truck-label {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #ffffff;
+  background: #2a5a8c;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 7px 16px;
+}
+
+.inv-truck-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.inv-truck-item {
+  padding: 8px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 9pt;
+}
+
+.inv-truck-item:nth-child(odd) {
+  border-right: 1px solid #e2e8f0;
+}
+
+.inv-truck-item strong {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.inv-truck-item span {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* ── Items Table ──────────────────────────────────────────── */
+.inv-items {
+  margin-bottom: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inv-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inv-items thead th {
+  background: #1a3a5c;
+  color: #ffffff;
+  padding: 9px 12px;
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: left;
+}
+
+/* col 3 = Quantity (text, left align) */
+/* col 4 = Weight in Tons, col 5 = Rate Per Ton, col 6 = Final Amount — right align */
+.inv-items thead th:nth-child(4),
+.inv-items thead th:nth-child(5),
+.inv-items thead th:last-child {
+  text-align: right;
+}
+
+.inv-items thead th:first-child {
+  width: 50px;
+  text-align: center;
+}
+
+.inv-items tbody td {
+  padding: 8px 12px;
+  font-size: 9pt;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.inv-items tbody td:first-child {
+  text-align: center;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Weight in Tons (4), Rate Per Ton (5), Final Amount (6) — right align */
+.inv-items tbody td:nth-child(4),
+.inv-items tbody td:nth-child(5),
+.inv-items tbody td:last-child {
+  text-align: right;
+  font-weight: 500;
+}
+
+.inv-items tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.inv-items tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+/* ── Totals ───────────────────────────────────────────────── */
+.inv-totals {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.inv-totals-box {
+  width: 260px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inv-totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 14px;
+  font-size: 9pt;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inv-totals-row:last-child {
+  border-bottom: none;
+}
+
+.inv-totals-row .inv-totals-label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.inv-totals-row .inv-totals-value {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.inv-totals-row.inv-grand-total {
+  background: #1a3a5c;
+  color: #ffffff;
+  padding: 11px 14px;
+}
+
+.inv-totals-row.inv-grand-total .inv-totals-label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.3px;
+}
+
+.inv-totals-row.inv-grand-total .inv-totals-value {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 11pt;
+}
+
+/* ── Amount in Words ──────────────────────────────────────── */
+.inv-words {
+  background: #f0f4f8;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 9pt;
+}
+
+.inv-words-label {
+  font-weight: 700;
+  color: #1a3a5c;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.inv-words-text {
+  font-weight: 600;
+  color: #1e293b;
+  font-style: italic;
+}
+
+/* ── Transport Route ───────────────────────────────────────── */
+.inv-route {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  align-items: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.inv-route-point {
+  min-width: 0;
+  padding: 7px 12px;
+}
+
+.inv-route-label {
+  display: block;
+  color: #64748b;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.inv-route-value {
+  display: block;
+  color: #1e293b;
+  font-size: 9pt;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.inv-route-arrow {
+  color: #ffffff;
+  background: #2a5a8c;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13pt;
+  font-weight: 700;
+}
+
+/* ── Terms & Conditions ───────────────────────────────────── */
+.inv-rules {
+  margin-bottom: 10px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inv-rules-label {
+  font-family: 'Roboto Slab', Georgia, serif;
+  font-size: 8pt;
+  font-weight: 700;
+  color: #ffffff;
+  background: #1a3a5c;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 7px 16px;
+}
+
+.inv-rules-content {
+  padding: 10px 16px;
+  font-size: 7.5pt;
+  color: #374151;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+/* ── Signatures ───────────────────────────────────────────── */
+.inv-signatures {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 10px;
+  padding-top: 5px;
+  gap: 20px;
+}
+
+.inv-signature-box {
+  text-align: center;
+  width: 230px;
+  flex-shrink: 0;
+}
+
+.inv-driver-sig {
+  text-align: left;
+}
+
+.inv-driver-sig .inv-signature-company {
+  text-align: left;
+  margin-bottom: 48px;
+}
+
+.inv-driver-sig .inv-signature-line {
+  text-align: center;
+}
+
+.inv-company-sig {
+  text-align: right;
+  position: relative;
+  cursor: pointer;
+}
+
+.inv-company-sig .inv-signature-company {
+  text-align: right;
+}
+
+.inv-company-sig .inv-signature-line {
+  text-align: center;
+}
+
+.inv-signature-company {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #1a3a5c;
+  margin-bottom: 48px;
+}
+
+.inv-company-sig.has-signature .inv-signature-company {
+  margin-bottom: 4px;
+}
+
+.inv-digital-sig-wrap {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.inv-digital-sig-wrap.hidden {
+  display: none !important;
+}
+
+.inv-digital-sig-img {
+  max-height: 62px;
+  max-width: 210px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.2);
+  display: block;
+  user-select: none;
+}
+
+.inv-date-editable {
+  cursor: pointer;
+  padding: 1px 4px;
+  border-radius: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.inv-date-editable:hover {
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.inv-date-editable .edit-icon {
+  font-size: 8pt;
+  opacity: 0.6;
+}
+
+.inv-signature-line {
+  border-top: 1.5px solid #1a3a5c;
+  padding-top: 5px;
+  font-size: 8pt;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.3px;
+}
+
+/* Custom Right Click Context Menu */
+.custom-context-menu {
+  position: fixed;
+  z-index: 10000;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.08);
+  min-width: 210px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: ctxFadeIn 0.12s ease-out;
+}
+
+@keyframes ctxFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.context-menu-item:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.context-menu-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 4px 0;
+}
+
+/* ── Footer line ──────────────────────────────────────────── */
+.inv-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #1a3a5c, #2563eb);
+}
+
+/* ============================================================
+   A4 PRINT FIX
+   ============================================================ */
+
+@media print {
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice-page {
+    width: 210mm !important;
+    height: 296mm !important;
+    min-height: 296mm !important;
+    max-height: 296mm !important;
+
+    margin: 0 !important;
+    box-shadow: none !important;
+
+    overflow: hidden !important;
+  }
+}
+/* ===== Route Edit Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+.modal-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+  width: 100%;
+  max-width: 420px;
+  overflow: hidden;
+}
+.modal-header {
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+.modal-body {
+  padding: 18px;
+}
+.modal-body .form-group {
+  margin-bottom: 14px;
+}
+.modal-body .form-group:last-child {
+  margin-bottom: 0;
+}
+.modal-body label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 5px;
+}
+.modal-body input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0f172a;
+  outline: none;
+  box-sizing: border-box;
+}
+.modal-body input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.modal-actions {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}

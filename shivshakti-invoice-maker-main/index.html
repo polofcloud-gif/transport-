@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHIVSHAKTI TRANSPORT COMPANY — Invoice Generator</title>
+  <meta name="description" content="Professional transport invoice and bill generator for SHIVSHAKTI TRANSPORT COMPANY, Chalisgaon, Jalgaon, Maharashtra.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/invoice.css">
+  <link rel="stylesheet" href="css/print.css">
+
+  <!-- html2pdf.js CDN for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" defer></script>
+
+  <!-- Favicon (truck emoji as inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle Menu">☰</button>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <h2>SHIVSHAKTI<br>TRANSPORT CO.</h2>
+        <div class="brand-subtitle">Invoice Generator</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#dashboard">
+          <span class="nav-icon">📊</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#new-invoice">
+          <span class="nav-icon">➕</span>
+          <span>New Invoice</span>
+        </a>
+        <a href="#history">
+          <span class="nav-icon">📜</span>
+          <span>Invoice History</span>
+        </a>
+        <a href="#customers">
+          <span class="nav-icon">👥</span>
+          <span>Customers</span>
+        </a>
+        <a href="#trucks">
+          <span class="nav-icon">🚛</span>
+          <span>Trucks</span>
+        </a>
+        <a href="#users" class="admin-only">
+          <span class="nav-icon">👤</span>
+          <span>Users</span>
+        </a>
+        <a href="#settings">
+          <span class="nav-icon">⚙️</span>
+          <span>Settings & Backup</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-account">
+        <div class="sidebar-user" id="sidebar-user"></div>
+        <button type="button" class="sidebar-account-btn" id="change-password-btn">
+          <span class="nav-icon">🔑</span><span>Change Password</span>
+        </button>
+        <button type="button" class="sidebar-account-btn danger" id="logout-btn">
+          <span class="nav-icon">🚪</span><span>Logout</span>
+        </button>
+      </div>
+
+      <div style="padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.7rem; color: rgba(255,255,255,0.4); line-height: 1.6;">
+        Chalisgaon, Jalgaon<br>
+        Maharashtra - 424101<br>
+        Mob: 9370005134
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="app">
+      <!-- Content rendered by JavaScript SPA router -->
+    </main>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- App JavaScript (ES Module) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
