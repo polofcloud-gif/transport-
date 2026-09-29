@@ -6,5 +6,8 @@
     "build": "npm --prefix shivshakti-invoice-maker-main run build",
     "preview": "npm --prefix shivshakti-invoice-maker-main run preview",
     "clean": "npm --prefix shivshakti-invoice-maker-main run clean"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
   }
 }
